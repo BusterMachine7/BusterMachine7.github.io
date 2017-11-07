@@ -260,6 +260,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bustermachine7.github.io/2017/11/07/poj-1753/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Type 2B">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YoRHa">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/07/poj-1753/" itemprop="url">poj-1753 Flip Game</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T19:18:11+08:00">
+                2017-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/基础算法/" itemprop="url" rel="index">
+                    <span itemprop="name">基础算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>  最近在尝试把简单算法和数据结构再熟悉一下。<br>  题目是<a href="http://poj.org/problem?id=1753" target="_blank" rel="external">http://poj.org/problem?id=1753</a>，抄一下：<br>  Flip game is played on a rectangular 4x4 field with two-sided pieces placed on each of its 16 squares. One side of each piece is white and the other one is black and each piece is lying either it’s black or white side up. Each round you flip 3 to 5 pieces, thus changing the color of their upper side from black to white and vice versa. The pieces to be flipped are chosen every round according to the following rules:<br>  Choose any one of the 16 pieces.<br>  Flip the chosen piece and also all adjacent pieces to the left, to the right, to the top, and to the bottom of the chosen piece (if there are any).</p>
+<p>  Consider the following position as an example:<br>  bwbw<br>  wwww<br>  bbwb<br>  bwwb<br>  Here “b” denotes pieces lying their black side up and “w” denotes pieces lying their white side up. If we choose to flip the 1st piece from the 3rd row (this choice is shown at the picture), then the field will become:<br>  bwbw<br>  bwww<br>  wwwb<br>  wwwb<br>  The goal of the game is to flip either all pieces white side up or all pieces black side up. You are to write a program that will search for the minimum number of rounds needed to achieve this goal.</p>
+<h2 id="简单的想法"><a href="#简单的想法" class="headerlink" title="简单的想法"></a>简单的想法</h2><p>  简化一下：给16个数kmap，给一个数k，问kmap里的数最少多少个和k异或之后k等于0或者0xffff。<br>  广搜可解。<br>  网上查了一下，问题范围增大以后可以分区域搜，没仔细想。<br>  虽然ac了，但是性能比较遗憾。</p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> kmap[<span class="number">16</span>] = &#123;</div><div class="line">    <span class="number">51200</span>,<span class="number">58368</span>,<span class="number">29184</span>,<span class="number">12544</span>,  </div><div class="line">    <span class="number">35968</span>,<span class="number">20032</span>,<span class="number">10016</span>,<span class="number">4880</span>,  </div><div class="line">    <span class="number">2248</span>,<span class="number">1252</span>,<span class="number">626</span>,<span class="number">305</span>,  </div><div class="line">    <span class="number">140</span>,<span class="number">78</span>,<span class="number">39</span>,<span class="number">19</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> end1 = <span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> end2 = <span class="number">0xffff</span>;</div><div class="line"><span class="keyword">int</span> checked[<span class="number">0xffff</span>];</div><div class="line"><span class="keyword">int</span> stat[<span class="number">0xffff</span>];</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span>(checked, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">0xffff</span>);</div><div class="line">    <span class="built_in">memset</span>(stat, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">0xffff</span>);</div><div class="line"></div><div class="line">    <span class="keyword">int</span> curr = <span class="number">0</span>;</div><div class="line">    <span class="keyword">char</span> s[<span class="number">5</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">4</span>; i++)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">4</span>; j++) &#123;</div><div class="line">            <span class="keyword">if</span>(s[j] == <span class="string">'b'</span>) &#123;</div><div class="line">                curr = curr | (<span class="number">1</span> &lt;&lt; (i*<span class="number">4</span> + j));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (curr == end1 || curr == end2) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    checked[<span class="number">0</span>] = <span class="number">0</span>;</div><div class="line">    stat[<span class="number">0</span>] = curr;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> res = <span class="number">100</span>;</div><div class="line">    <span class="keyword">int</span> l = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> r=<span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> checking = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(l &lt; r) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">16</span>;i++) &#123;</div><div class="line">            checking = checked[l] | (<span class="number">1</span>&lt;&lt;i);</div><div class="line">            <span class="keyword">if</span> (stat[checking] == <span class="number">0</span>) &#123;</div><div class="line">                checked[r] = checking;</div><div class="line">                stat[checking] = stat[checked[l]] ^ kmap[i];</div><div class="line">                ++r;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        l++;</div><div class="line">        <span class="keyword">if</span> (stat[checked[l]] == end1 || stat[checked[l]] == end2) &#123;</div><div class="line">            <span class="keyword">int</span> tmpres = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> z=<span class="number">0</span>;z&lt;<span class="number">16</span>;z++) &#123;</div><div class="line">                <span class="keyword">if</span> ((<span class="number">1</span>&lt;&lt;z) &amp; (checked[l])) &#123;</div><div class="line">                    ++tmpres;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, tmpres);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Impossible\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://bustermachine7.github.io/2017/10/27/tf-mnist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -597,7 +753,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
