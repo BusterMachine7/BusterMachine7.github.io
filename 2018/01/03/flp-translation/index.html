@@ -68,6 +68,7 @@
 
 
 
+  <meta name="keywords" content="algorithm," />
 
 
 
@@ -77,16 +78,19 @@
 
 
 
-<meta name="description" content="test blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YoRHa">
-<meta property="og:url" content="https://bustermachine7.github.io/index.html">
+
+<meta name="description" content="最近读了一下flp的证明，翻译下。 需要解决的问题如果要解决的问题是这样的或者比这约束还强那就可能一直达成不了一致了。  一个一致性协议P运行在包含N个进程的异步系统，每个进程p有一个1位的输入寄存器xp，一个输出寄存器yp，xp和yp的值可以为(b，0，1)，以及一个无限容量的内部存储。输入和输出寄存器的值，程序计数器和内部存储器一起构成进程的内部状态。初始状态表示了除了输入寄存器以外的所有部分">
+<meta name="keywords" content="algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读一下flp impossibility的证明">
+<meta property="og:url" content="https://bustermachine7.github.io/2018/01/03/flp-translation/index.html">
 <meta property="og:site_name" content="YoRHa">
-<meta property="og:description" content="test blog">
+<meta property="og:description" content="最近读了一下flp的证明，翻译下。 需要解决的问题如果要解决的问题是这样的或者比这约束还强那就可能一直达成不了一致了。  一个一致性协议P运行在包含N个进程的异步系统，每个进程p有一个1位的输入寄存器xp，一个输出寄存器yp，xp和yp的值可以为(b，0，1)，以及一个无限容量的内部存储。输入和输出寄存器的值，程序计数器和内部存储器一起构成进程的内部状态。初始状态表示了除了输入寄存器以外的所有部分">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-05T11:55:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YoRHa">
-<meta name="twitter:description" content="test blog">
+<meta name="twitter:title" content="读一下flp impossibility的证明">
+<meta name="twitter:description" content="最近读了一下flp的证明，翻译下。 需要解决的问题如果要解决的问题是这样的或者比这约束还强那就可能一直达成不了一致了。  一个一致性协议P运行在包含N个进程的异步系统，每个进程p有一个1位的输入寄存器xp，一个输出寄存器yp，xp和yp的值可以为(b，0，1)，以及一个无限容量的内部存储。输入和输出寄存器的值，程序计数器和内部存储器一起构成进程的内部状态。初始状态表示了除了输入寄存器以外的所有部分">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://bustermachine7.github.io/"/>
+  <link rel="canonical" href="https://bustermachine7.github.io/2018/01/03/flp-translation/"/>
 
 
 
 
 
-  <title>YoRHa</title>
+  <title>读一下flp impossibility的证明 | YoRHa</title>
   
 
 
@@ -141,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -277,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/03/flp-translation/" itemprop="url">读一下flp impossibility的证明</a></h1>
+          <h1 class="post-title" itemprop="name headline">读一下flp impossibility的证明</h1>
         
 
         <div class="post-meta">
@@ -362,9 +363,7 @@
       
 
       
-        
-          
-            <p>最近读了一下flp的证明，翻译下。</p>
+        <p>最近读了一下flp的证明，翻译下。</p>
 <h2 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题"></a>需要解决的问题</h2><p>如果要解决的问题是这样的或者比这约束还强那就可能一直达成不了一致了。</p>
 <blockquote>
 <p>一个一致性协议P运行在包含N个进程的异步系统，每个进程p有一个1位的输入寄存器xp，一个输出寄存器yp，xp和yp的值可以为(b，0，1)，以及一个无限容量的内部存储。输入和输出寄存器的值，程序计数器和内部存储器一起构成进程的内部状态。初始状态表示了除了输入寄存器以外的所有部分的初始值，yp的值起初是b，yp是0或1的状态看做<strong>确定状态</strong>，p根据状态转移函数切换到确定状态。一旦p进入确定状态，状态转移函数就不再能更改yp。整个系统P是由每个进程的状态转移函数以及xp的初始值确定的。</p>
@@ -458,8 +457,6 @@
 <h4 id="定理2：存在部分正确的一致性协议，只要执行进程中进程死掉并且大多数的进程最初是活的，其中所有正常进程总是达成相同的确定值。"><a href="#定理2：存在部分正确的一致性协议，只要执行进程中进程死掉并且大多数的进程最初是活的，其中所有正常进程总是达成相同的确定值。" class="headerlink" title="定理2：存在部分正确的一致性协议，只要执行进程中进程死掉并且大多数的进程最初是活的，其中所有正常进程总是达成相同的确定值。"></a>定理2：存在部分正确的一致性协议，只要执行进程中进程死掉并且大多数的进程最初是活的，其中所有正常进程总是达成相同的确定值。</h4></blockquote>
 <h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>就那样吧，受教了。</p>
 
-          
-        
       
     </div>
     
@@ -474,327 +471,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bustermachine7.github.io/2017/11/07/poj-1753/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Type 2B">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoRHa">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/07/poj-1753/" itemprop="url">poj-1753 Flip Game</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T19:18:11+08:00">
-                2017-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/基础算法/" itemprop="url" rel="index">
-                    <span itemprop="name">基础算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>  最近在尝试把简单算法和数据结构再熟悉一下。<br>  题目是<a href="http://poj.org/problem?id=1753" target="_blank" rel="external">http://poj.org/problem?id=1753</a>，抄一下：<br>  Flip game is played on a rectangular 4x4 field with two-sided pieces placed on each of its 16 squares. One side of each piece is white and the other one is black and each piece is lying either it’s black or white side up. Each round you flip 3 to 5 pieces, thus changing the color of their upper side from black to white and vice versa. The pieces to be flipped are chosen every round according to the following rules:<br>  Choose any one of the 16 pieces.<br>  Flip the chosen piece and also all adjacent pieces to the left, to the right, to the top, and to the bottom of the chosen piece (if there are any).</p>
-<p>  Consider the following position as an example:<br>  bwbw<br>  wwww<br>  bbwb<br>  bwwb<br>  Here “b” denotes pieces lying their black side up and “w” denotes pieces lying their white side up. If we choose to flip the 1st piece from the 3rd row (this choice is shown at the picture), then the field will become:<br>  bwbw<br>  bwww<br>  wwwb<br>  wwwb<br>  The goal of the game is to flip either all pieces white side up or all pieces black side up. You are to write a program that will search for the minimum number of rounds needed to achieve this goal.</p>
-<h2 id="简单的想法"><a href="#简单的想法" class="headerlink" title="简单的想法"></a>简单的想法</h2><p>  简化一下：给16个数kmap，给一个数k，问kmap里的数最少多少个和k异或之后k等于0或者0xffff。<br>  广搜可解。<br>  网上查了一下，问题范围增大以后可以分区域搜，没仔细想。<br>  虽然ac了，但是性能比较遗憾。</p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> kmap[<span class="number">16</span>] = &#123;</div><div class="line">    <span class="number">51200</span>,<span class="number">58368</span>,<span class="number">29184</span>,<span class="number">12544</span>,  </div><div class="line">    <span class="number">35968</span>,<span class="number">20032</span>,<span class="number">10016</span>,<span class="number">4880</span>,  </div><div class="line">    <span class="number">2248</span>,<span class="number">1252</span>,<span class="number">626</span>,<span class="number">305</span>,  </div><div class="line">    <span class="number">140</span>,<span class="number">78</span>,<span class="number">39</span>,<span class="number">19</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> end1 = <span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> end2 = <span class="number">0xffff</span>;</div><div class="line"><span class="keyword">int</span> checked[<span class="number">0xffff</span>];</div><div class="line"><span class="keyword">int</span> stat[<span class="number">0xffff</span>];</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span>(checked, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">0xffff</span>);</div><div class="line">    <span class="built_in">memset</span>(stat, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">0xffff</span>);</div><div class="line"></div><div class="line">    <span class="keyword">int</span> curr = <span class="number">0</span>;</div><div class="line">    <span class="keyword">char</span> s[<span class="number">5</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">4</span>; i++)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">4</span>; j++) &#123;</div><div class="line">            <span class="keyword">if</span>(s[j] == <span class="string">'b'</span>) &#123;</div><div class="line">                curr = curr | (<span class="number">1</span> &lt;&lt; (i*<span class="number">4</span> + j));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (curr == end1 || curr == end2) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    checked[<span class="number">0</span>] = <span class="number">0</span>;</div><div class="line">    stat[<span class="number">0</span>] = curr;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> res = <span class="number">100</span>;</div><div class="line">    <span class="keyword">int</span> l = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> r=<span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> checking = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(l &lt; r) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">16</span>;i++) &#123;</div><div class="line">            checking = checked[l] | (<span class="number">1</span>&lt;&lt;i);</div><div class="line">            <span class="keyword">if</span> (stat[checking] == <span class="number">0</span>) &#123;</div><div class="line">                checked[r] = checking;</div><div class="line">                stat[checking] = stat[checked[l]] ^ kmap[i];</div><div class="line">                ++r;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        l++;</div><div class="line">        <span class="keyword">if</span> (stat[checked[l]] == end1 || stat[checked[l]] == end2) &#123;</div><div class="line">            <span class="keyword">int</span> tmpres = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> z=<span class="number">0</span>;z&lt;<span class="number">16</span>;z++) &#123;</div><div class="line">                <span class="keyword">if</span> ((<span class="number">1</span>&lt;&lt;z) &amp; (checked[l])) &#123;</div><div class="line">                    ++tmpres;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, tmpres);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Impossible\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bustermachine7.github.io/2017/10/27/tf-mnist/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Type 2B">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoRHa">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/tf-mnist/" itemprop="url">tensorflow教程中的mnist</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T11:14:17+08:00">
-                2017-10-27
-              </time>
+              <a href="/2017/11/07/poj-1753/" rel="next" title="poj-1753 Flip Game">
+                <i class="fa fa-chevron-left"></i> poj-1753 Flip Game
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/tensorflow/" itemprop="url" rel="index">
-                    <span itemprop="name">tensorflow</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="记录一下读tensorflow教程mnist部分的过程"><a href="#记录一下读tensorflow教程mnist部分的过程" class="headerlink" title="记录一下读tensorflow教程mnist部分的过程"></a>记录一下读tensorflow教程mnist部分的过程</h2><p>  MNIST database (Modified National Institute of Standards and Technology database) 包含了一组手写数字，可以用于训练/评价对数字的图像识别。</p>
-<h2 id="demo中涉及的算法"><a href="#demo中涉及的算法" class="headerlink" title="demo中涉及的算法"></a>demo中涉及的算法</h2><h3 id="Softmax回归"><a href="#Softmax回归" class="headerlink" title="Softmax回归"></a>Softmax回归</h3><p>  对图片像素值进行加权求和。每个像素针对不同数字有不同的权值，将权值乘以灰度。</p>
-<h3 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h3><p>  为训练模型，使用交叉熵描述损失。</p>
-<h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>  降低交叉熵</p>
-<h2 id="demo如下"><a href="#demo如下" class="headerlink" title="demo如下"></a>demo如下</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> input_data</div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line">NUM_CORES = <span class="number">2</span></div><div class="line"></div><div class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="keyword">True</span>)</div><div class="line">x = tf.placeholder(<span class="string">"float"</span>, [<span class="keyword">None</span>, <span class="number">784</span>])</div><div class="line">W = tf.Variable(tf.zeros([<span class="number">784</span>,<span class="number">10</span>]))</div><div class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</div><div class="line">y = tf.nn.softmax(tf.matmul(x,W) + b)</div><div class="line"></div><div class="line">y_ = tf.placeholder(<span class="string">"float"</span>, [<span class="keyword">None</span>,<span class="number">10</span>])</div><div class="line">cross_entropy = -tf.reduce_sum(y_*tf.log(y))</div><div class="line"></div><div class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>).minimize(cross_entropy)</div><div class="line"></div><div class="line">init = tf.initialize_all_variables()</div><div class="line">sess = tf.Session(config=tf.ConfigProto(inter_op_parallelism_threads=NUM_CORES,intra_op_parallelism_threads=NUM_CORES))</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</div><div class="line">  batch_xs, batch_ys = mnist.train.next_batch(<span class="number">100</span>)</div><div class="line">  correct_prediction = tf.equal(tf.argmax(y,<span class="number">1</span>), tf.argmax(y_,<span class="number">1</span>))</div><div class="line">  accuracy = tf.reduce_mean(tf.cast(correct_prediction, <span class="string">"float"</span>))</div><div class="line">  <span class="keyword">print</span> sess.run(accuracy, feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels&#125;)</div><div class="line">  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -804,153 +510,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bustermachine7.github.io/2017/10/24/some-wallpapers/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Type 2B">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YoRHa">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/24/some-wallpapers/" itemprop="url">壁纸</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T16:47:57+08:00">
-                2017-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/图片/" itemprop="url" rel="index">
-                    <span itemprop="name">图片</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <img src="/2017/10/24/some-wallpapers/example.jpg" alt="一张壁纸" title="一张壁纸">
-<p>放一张壁纸</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -958,6 +522,8 @@
 
 
           
+  
+
 
         </div>
         
@@ -978,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1045,6 +620,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要解决的问题"><span class="nav-number">1.</span> <span class="nav-text">需要解决的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引理1：schedule需要是可换的，即若s1-s2将C分别转换为C1-C2，且s1-s2中应用时间的进程不相交，那么s2可以应用到C1，s1也可以应用到C2，且到达同一配置。"><span class="nav-number">1.1.</span> <span class="nav-text">引理1：schedule需要是可换的，即若s1, s2将C分别转换为C1, C2，且s1, s2中应用时间的进程不相交，那么s2可以应用到C1，s1也可以应用到C2，且到达同一配置。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flp"><span class="nav-number">2.</span> <span class="nav-text">flp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定理1：没有一致性协议是单个进程故障时仍完全正确的"><span class="nav-number">2.1.</span> <span class="nav-text">定理1：没有一致性协议是单个进程故障时仍完全正确的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引理2：P有二价的初始配置。"><span class="nav-number">2.1.1.</span> <span class="nav-text">引理2：P有二价的初始配置。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引理3：假设C是P的二价配置，e-p-m-是一个可以应用到C的事件。Eall是C不应用e时可达的配置集合，Dall是D-e-E-的集合，其中E属于Eall。-那么，Dall含有二价配置。"><span class="nav-number">2.1.2.</span> <span class="nav-text">引理3：假设C是P的二价配置，e=(p, m)是一个可以应用到C的事件。Eall是C不应用e时可达的配置集合，Dall是D=e(E)的集合，其中E属于Eall。 那么，Dall含有二价配置。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Initially-Dead-Processes"><span class="nav-number">2.2.</span> <span class="nav-text">Initially Dead Processes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定理2：存在部分正确的一致性协议，只要执行进程中进程死掉并且大多数的进程最初是活的，其中所有正常进程总是达成相同的确定值。"><span class="nav-number">2.2.1.</span> <span class="nav-text">定理2：存在部分正确的一致性协议，只要执行进程中进程死掉并且大多数的进程最初是活的，其中所有正常进程总是达成相同的确定值。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感想"><span class="nav-number">3.</span> <span class="nav-text">感想</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1171,6 +762,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
